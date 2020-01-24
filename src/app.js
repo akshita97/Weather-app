@@ -9,6 +9,7 @@ const forecast = require('./utils/forecast')
 //console.log(__dirname)
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //to use static files in public folder use path.join()
 const publicDirectory = path.join(__dirname, '../public')
@@ -127,6 +128,6 @@ app.get('*',(req,res) => {
 })
 
 //to start the server use listen(port no., function)
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port '+ port)
 })
